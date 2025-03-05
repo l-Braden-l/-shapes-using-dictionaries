@@ -22,24 +22,9 @@ def handle_events ():
     return True
    
 
-
-
-def draw_text(screen, text, font, text_col, x, y):
-   
-   txt_img = font.render(text, True, text_col)
-   screen.blit(txt_img, (x, y))
-
-
-
-
-
-
-
-
 def main():
    screen = init_game()
    clock = pygame.time.Clock() # Initialize the clock here
-   txt_font1 = pygame.font.SysFont("Ariel", random.randint(10, 100))
    shapes_list = []
    
    running = True
@@ -49,8 +34,7 @@ def main():
 
       #makes a random number to represent the various shapes
       shape_type = random.randrange(3)
-      font = pygame.font.SysFont(None, shape_type)
-      pygame.render
+
       #Create a new shape and add it to the list 
       if shape_type == 0:
          # Circle: (type, color, position, radius)
@@ -89,14 +73,7 @@ def main():
             shapes.draw_rect(screen, shape)
          elif shape['type'] == 'line': 
             shapes.draw_line(screen, shape)
-      draw_text(screen, "Hello World", txt_font1, (0,0,0), (config.WINDOW_WIDTH), (config.WINDOW_HEIGHT))
-
-        # Randomize text size each time it is drawn
-      txt_font1 = pygame.font.SysFont("Arial", random.randint(10, 100))
-
-        # Draw random sized text at the bottom of the screen
-      draw_text(screen, "Hello World", txt_font1, (0, 0, 0), config.WINDOW_WIDTH // 2 - 50, config.WINDOW_HEIGHT - 50)
-
+            
       pygame.display.flip()
 
       # -- Limit the frame rate to the specified frames per second (FPS) -- #
