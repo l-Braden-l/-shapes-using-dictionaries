@@ -74,11 +74,6 @@ def main():
          elif shape['type'] == 'line': 
             shapes.draw_line(screen, shape)
 
-
-
-
-
-
       pygame.display.flip()
 
       # -- Limit the frame rate to the specified frames per second (FPS) -- #
