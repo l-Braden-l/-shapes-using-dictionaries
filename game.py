@@ -39,39 +39,39 @@ def main():
       if shape_type == 0:
          # Circle: (type, color, position, radius)
          new_shapes = {
-               "type":"circle",
-               "color":(random.randrange(255), random.randrange(255), random.randrange(255)),
-               "position":(random.randrange(config.WINDOW_WIDTH), random.randrange(config.WINDOW_HEIGHT)),
-               "radius": 50
+               'type':'circle',
+               'color':(random.randrange(255), random.randrange(255), random.randrange(255)),
+               'position':(random.randrange(config.WINDOW_WIDTH), random.randrange(config.WINDOW_HEIGHT)),
+               'radius': 50
          }
       elif shape_type == 1:
          # rectangle: (type, color, position, width, height)
          new_shapes = {
-               "type":"rectangle",
-               "color":(random.randrange(255), random.randrange(255), random.randrange(255)),
-               "position":(random.randrange(config.WINDOW_WIDTH) - 100, random.randrange(config.WINDOW_HEIGHT) - 100),
-               "width": 100,
-               "height":100
+               'type':'rectangle',
+               'color':(random.randrange(255), random.randrange(255), random.randrange(255)),
+               'position':(random.randrange(config.WINDOW_WIDTH) - 100, random.randrange(config.WINDOW_HEIGHT) - 100),
+               'width': 100,
+               'height':100
          }
       elif shape_type == 2:
             # line: (type,color, start_pos, end_pos, width)
             new_shapes = {
-                "type": "line",
-               "color": (random.randrange(255), random.randrange(255), random.randrange(255)),
-               "start_pos": (random.randrange(config.WINDOW_WIDTH), random.randrange(config.WINDOW_HEIGHT)),
-               "end_pos": (random.randrange(config.WINDOW_WIDTH), random.randrange(config.WINDOW_HEIGHT)),
-               "width": 10
+                'type': 'line',
+               'color': (random.randrange(255), random.randrange(255), random.randrange(255)),
+               'start_pos': (random.randrange(config.WINDOW_WIDTH), random.randrange(config.WINDOW_HEIGHT)),
+               'end_pos': (random.randrange(config.WINDOW_WIDTH), random.randrange(config.WINDOW_HEIGHT)),
+               'width': 10
             }
       # add the new shapes to the list
       shapes_list.append(new_shapes)
               
       # draw all shapes from the list using the appropriate function from the shapes module\
       for shape in shapes_list: 
-         if shape["type"] == "circle":
+         if shape['type'] == 'circle':
             shapes.draw_circle(screen, shape)
-         elif shape["type"] == "rectangle":
+         elif shape['type'] == 'rectangle':
             shapes.draw_rect(screen, shape)
-         elif shape["type"] == "line": 
+         elif shape['type'] == 'line': 
             shapes.draw_line(screen, shape)
 
 
